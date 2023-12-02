@@ -1,0 +1,251 @@
+NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL bandit1
+bandit.labs.overthewire.org
+
+bandit2 
+cat -
+doesn't work
+cat ./-
+rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+
+bandit3
+cat (non funzionano li spazi tra le parole quindi ogni parola deve essere seguita da \
+oppure cat "..." oppure ancora scrivere cat "...<Tab per completare auto>"
+aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+
+bandit4
+ls -a
+trova i file nascosti ossia i file che iniziano con .
+find 
+può essere usato per trovare e visualizzare un percorso
+2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
+
+bandit5
+ls per leggere i contenuti della directory, ottieni inhere
+cd inhere/ per muoversi in quella directory
+ls per leggerne i contenuti e si ottiene la lista di file
+per controllare quale di questi è leggibile>
+file
+siccome il nome del file inizia con - allora bisogna precederlo con ./ (come prima con cat)
+file ./<nome_file>
+file ./*
+dove l'asterisco significa ALL
+lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+
+bandit6
+/inhere
+human-readable
+1033 bytes in size
+not executable
+
+find
+	-type >>> per per cercare solo FILE (f)
+	-size >>> per precisa grandezza c sta per byte
+	-not -executable >>> trova solo non eseguibili
+
+P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+
+bandit7
+
+find
+/ cerca su tutto il server
+
+2>/dev/null per filtrare
+
+z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
+
+bandit8
+ls
+cat | grep
+
+TESKZC0XvTetK0S9xNwm25STk5iWrBvP
+
+bandit9
+
+sort | uniq -u
+uniq -u printa linee uniche (riptetute solo una volta)
+
+EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+
+bandit10
+
+strings trova stringhe human-readable
+grep == troverà tale dove più volte è ripetuto l'uguale
+
+G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+
+bandit11
+
+base64
+usato per de/codificare in base64
+con -d si decodifica
+
+6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+
+bandit12
+
+ruotare/cambiare posizione delle lettere di 13 posizioni = crittazione ROT13 perchè le lettere sono 26 crittografia e decrittografia usano lo stesso metodo, ergo in questo caso basta sostituire le minuscole alle maiuscole, senza calcoli e comandi strani
+
+tr
+permette di inserire un INPUT e printarlo secondo un settato OUTPUT
+
+tr 'A-Za-z' 'N-ZA-Mn-za-m'
+
+JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+
+creo un alias con
+alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+per le lettere e per i numeri
+alias rot5="tr '0-9' '5-90-4'"
+
+bandit13
+
+hexdump -r reversa la hexdump
+
+
+
+---------------------------------------------------------------------
+
+pwd 
+PrintWorkingDirectory 
+dice dove ti trovi
+
+mkdir
+crea directory
+
+touch
+crea file
+
+rm
+cancella file
+	-R x le cartellle
+
+mv 
+sposta o rinomina
+
+cp
+copy
+
+echo "<...>" >> /path/to/file
+aggiunge prompt alla fine del file
+ESEMPIO.: echo "test effettuato con successo" >> C:\Users\Raffa\Desktop\bandit.txt
+
+
+ls -l determina caratteristiche del file, indicando owner e chi ne possiede i permessi
+	-rw (solo l'user che lo ha creato può leggere, scrivere ma non eseguire)
+su <user>
+
+
+---------------------------------------------------------------------
+
+|
+piping, permette l'esecuzione di un secondo comando 
+
+&
+permette l'esecuzione di un comando in background (lo possiamo trovare come processo)
+
+;
+permette l'esecuzione di un secondo comando in contemporanea
+
+---------------------------------------------------------------------
+
+/etc
+Directory per file di sistema usati per l'OS
+
+/var
+variable data
+dati scritti solitamente da servizi/applicazioni sul sistema
+ex.: logs
+
+/root
+directory per il root user (admin/superuser)
+
+/tmp
+file temporanei vengono trovati qui, al riavvio di un sistema i contenuti vengono eliminati
+accessibile da qualunque user
+
+
+
+t e s t   e f f e t t u a t o   c o n   s u c c e s s o 
+
+---------------------------------------------------------------------
+
+Nano
+è un text editor, basta usare 
+nano filename
+dove "filename" è il nome del file che si vuol editare
+a questo punto verrà lanciato Nano;
+Ctrl+X to exit
+-Search text
+-Copy/Paste
+-Jump to line
+-Current Position?
+ VIM
+è un altro esempio di text editor, molto più avanzato
+-Custom Key Shortcuts 
+-Syntax Highlight
+
+---------------------------------------------------------------------
+
+DOWNLOAD E TRASFERIMENTO FILE
+
+wget
+conoscendo l'URL del file - scarica il file via HTTP
+
+scp
+Secure Copy
+permette la copia, e quindi il trasferimento, di un file tra un computer e un altro via SSH
+servono: IP remoto, user remoto, nome file locale, nuovo nome del file nel sys remoto
+scp SOURCE DESTINATION
+scp filelocale user@IP:/path/to/nomefileremoto
+o al contrario per scaricarlo
+scp user@IP:/path/to/fileremoto nomefilelocale
+
+Python, inoltre fornisce un modo facile da usare per trasformare il tuo PC in un web server dal quale gli utenti potranno scaricare i file via wget per esempio o curl
+
+python3 -m http.server
+si riceverà http://IP/file che verrà usato dagli altri per ottenere i file appunto
+
+---------------------------------------------------------------------
+
+Check connettività all'IP
+ip addr show
+
+---------------------------------------------------------------------
+
+PROCESSI
+
+ps
+check processi in corso
+
+ps aux 
+check dei progressi non di sessione (di sistema, ad esempio)/ di altri utenti
+
+top
+real-time
+
+kill PID
+termina un processo
+
+SIGTERM - w/ cleanup (permette di terminare un processo in modo pulito)
+SIGKILL - w/o cleanup
+SIGSTOP - sospende
+
+systemctl start/stop [servizio]
+per eseguire/stoppare un servizio
+systemctl enable/disable 
+per startarlo/disabilitarlo all'avvio
+
+&
+mette in background un processo/comando/script (utile quando si copiano file, così si può continuare nel mentre a fare ciò che si deve)
+
+fg
+mette in foreground processi
+
+---------------------------------------------------------------------
+
+
+
+
+
+ 

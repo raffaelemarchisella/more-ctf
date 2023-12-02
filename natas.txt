@@ -1,0 +1,8 @@
+natas 
+	-1 trovata nella sorgente pagina
+	-2 trovata ispezionando gli elementi e le sorgenti
+	-3 trovato nella sorgente pagina una directory utile, nascosta, /files
+	-4 trovata nel file robots.txt /s3cr3t/
+	-5 modifico il mio referer
+	-6 con un cookie editor modifico il valore del cookie di login fOIvE0MDtPTgRhqmmvvAOt2EfXR6uQgR
+	-7
